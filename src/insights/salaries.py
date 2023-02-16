@@ -48,7 +48,7 @@ def get_min_salary(path: str) -> int:
         The minimum salary paid out of all job opportunities
     """
     data = read(path)
-    min_salary = 0
+    min_salary = 999999999
     for min_salaries in data:
         if (
             min_salaries["min_salary"] != ""
