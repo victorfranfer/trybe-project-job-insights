@@ -21,9 +21,8 @@ def read(path: str) -> List[Dict]:
         dictionaries = csv.DictReader(file)
         data = []
         for dictionary in dictionaries:
-            data.append(dictionary);
+            data.append(dictionary)
         return data
-
 
 
 def get_unique_job_types(path: str) -> List[str]:
