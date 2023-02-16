@@ -20,9 +20,13 @@ def get_max_salary(path: str) -> int:
     data = read(path)
     max_salary = 0
     for max_salaries in data:
-        # isnumeric() - https://www.w3schools.com/python/ref_string_isnumeric.asp
-        if max_salaries['max_salary'] != '' and max_salaries['max_salary'].isnumeric():
-            salary = int(max_salaries['max_salary'])
+        # isnumeric()
+        # https://www.w3schools.com/python/ref_string_isnumeric.asp
+        if (
+            max_salaries["max_salary"] != ""
+            and max_salaries["max_salary"].isnumeric()
+        ):
+            salary = int(max_salaries["max_salary"])
             if salary > max_salary:
                 max_salary = salary
     return max_salary
@@ -43,7 +47,17 @@ def get_min_salary(path: str) -> int:
     int
         The minimum salary paid out of all job opportunities
     """
-    raise NotImplementedError
+    data = read(path)
+    min_salary = 0
+    for min_salaries in data:
+        if (
+            min_salaries["min_salary"] != ""
+            and min_salaries["min_salary"].isnumeric()
+        ):
+            salary = int(min_salaries["min_salary"])
+            if salary < min_salary:
+                min_salary = salary
+    return min_salary
 
 
 def matches_salary_range(job: Dict, salary: Union[int, str]) -> bool:
@@ -73,8 +87,7 @@ def matches_salary_range(job: Dict, salary: Union[int, str]) -> bool:
 
 
 def filter_by_salary_range(
-    jobs: List[dict],
-    salary: Union[str, int]
+    jobs: List[dict], salary: Union[str, int]
 ) -> List[Dict]:
     """Filters a list of jobs by salary range
 
