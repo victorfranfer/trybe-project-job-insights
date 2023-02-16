@@ -17,17 +17,13 @@ def read(path: str) -> List[Dict]:
     list
         List of rows as dicts
     """
-    with open(path, "r") as file:
-        rows = csv.reader(file, delimiter=",", quotechar='"')
-        header = next(rows)
+    with open(path, mode="r") as file:
+        dictionaries = csv.DictReader(file)
         data = []
-
-        for row in rows:
-            dictionary = {}
-            for index in range(len(header)):
-                dictionary[header[index]] = row[index]
-            data.append(dictionary)
+        for dictionary in dictionaries:
+            data.append(dictionary);
         return data
+
 
 
 def get_unique_job_types(path: str) -> List[str]:
