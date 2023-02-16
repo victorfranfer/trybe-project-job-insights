@@ -20,7 +20,7 @@ def get_unique_industries(path: str) -> List[str]:
     data = read(path)
     industries = set()
     for industry in data:
-        if len(industry) != 0:
+        if len(industry['industry']) != 0:
             industries.add(industry['industry'])
     return industries
 
