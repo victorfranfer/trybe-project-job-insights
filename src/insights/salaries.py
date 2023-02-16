@@ -1,4 +1,5 @@
 from typing import Union, List, Dict
+from .jobs import read
 
 
 def get_max_salary(path: str) -> int:
@@ -16,7 +17,15 @@ def get_max_salary(path: str) -> int:
     int
         The maximum salary paid out of all job opportunities
     """
-    raise NotImplementedError
+    data = read(path)
+    max_salary = 0
+    for max_salaries in data:
+        # isnumeric() - https://www.w3schools.com/python/ref_string_isnumeric.asp
+        if max_salaries['max_salary'] != '' and max_salaries['max_salary'].isnumeric():
+            salary = int(max_salaries['max_salary'])
+            if salary > max_salary:
+                max_salary = salary
+    return max_salary
 
 
 def get_min_salary(path: str) -> int:
