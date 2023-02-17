@@ -47,21 +47,10 @@ src/flask_app/routes_and_views.py
 # Running the app
 <li>Clone repository</li>
 <li>Create and run virtual environment</li>
-```bash
-python3 -m .venv && source .venv/bin/activate
-```
+[python3 -m .venv && source .venv/bin/activate]
 <li>Install dependencies</li>
-```bash
-python3 -m pip install -r dev-requirements.txt
-```
+[python3 -m pip install -r dev-requirements.txt]
 <li>Run app on web browser</li>
-```bash
-flask run```
-and access
-```bash
-http://localhost:5000
-```
+[flask run] and access [http://localhost:5000]
 <li>Run tests</li>
-```bash
-python3 -m pytest
-```
+[python3 -m pytest]
