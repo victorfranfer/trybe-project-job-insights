@@ -39,15 +39,14 @@ tests/sorting/test_sorting.py
 ```
 
 # Flask Route
-The Flask route I implemented is ```bash /jobs/<index>" ``` is in the file:
+The Flask route I implemented is ```/jobs/<index> ``` is in the file:
 ```bash
 src/flask_app/routes_and_views.py
 ```
 
 # Running the app
-<ul>
-  <li> Clone repository </li>
-  <li> Create and run virtual environment ```bash python3 -m .venv && source .venv/bin/activate``` </li>
-  <li> Install dependencies ```bash python3 -m pip install -r dev-requirements.txt``` </li>
-  <li> Run app on web browser ```bash flask run``` and access ```bash http://localhost:5000``` </li>
-  <li> Run tests ```bash python3 -m pytest``` </li>
+Clone repository
+Create and run virtual environment ```python3 -m .venv && source .venv/bin/activate```
+Install dependencies ```python3 -m pip install -r dev-requirements.txt```
+Run app on web browser ```flask run``` and access ```http://localhost:5000```
+Run tests ```python3 -m pytest```
